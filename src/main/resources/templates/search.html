@@ -38,6 +38,17 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <div th:fragment="search">
+    <h3 th:text="${results}"></h3>
+
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="value : ${job}">
+            <td th:text="${#strings.capitalizeWords(value.key)}"></td>
+            <td th:text="${#strings.capitalizeWords(value.value)}"></td>
+        </tr>
+    </table>
+    </div>
+
 </div>
 
 </body>
